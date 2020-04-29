@@ -1,0 +1,45 @@
+.slider {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .range {
+    border-radius: 5px;
+    height: 100%;
+    width: 100%;
+    background: var(--blackGradient);
+    box-shadow: var(--blackBoxShadow);
+    position: relative;
+    .bar {
+      height: 100%;
+      background-color: var(--blueColor);
+      width: 5%;
+      transition: width 0.3s ease-in-out;
+      //box-shadow: 6px 0px 27px 1px rgba(82, 139, 255, 0.55);
+      box-shadow: 0px 0px 26px 5px rgba(82, 139, 255, 0.52);
+    }
+    p {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: var(--fontColor);
+    }
+  }
+
+  .plus,
+  .minus {
+    width: 20%;
+    height: 100%;
+    background: var(--blackGradient);
+    box-shadow: var(--blackBoxShadow);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
