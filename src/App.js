@@ -1,9 +1,10 @@
 import React from "react";
 import "./App.scss";
+import WorkingBox from "./components/workingBox/workingBox";
 function App() {
   return (
     <div className="App">
-      <h1>hello world</h1>
+      <WorkingBox />
     </div>
   );
 }

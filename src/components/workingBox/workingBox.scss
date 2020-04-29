@@ -1,0 +1,21 @@
+.WorkingBox {
+  width: 90%;
+  background-color: rebeccapurple;
+  height: 75vh;
+  min-height: 450px;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  .left-container {
+    width: 65%;
+    background-color: rosybrown;
+    height: 100%;
+  }
+  .right-container {
+    width: 35%;
+    background-color: saddlebrown;
+    height: 100%;
+  }
+}
