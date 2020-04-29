@@ -1,11 +1,7 @@
 import React from "react";
 import "./codeBox.scss";
 const CodeBox = () => {
-  return (
-    <div className="codeBox">
-      <h3>Code box</h3>
-    </div>
-  );
+  return <div className="codeBox"></div>;
 };
 
 export default CodeBox;

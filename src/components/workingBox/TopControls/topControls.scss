@@ -1,7 +1,9 @@
 .topControl {
   width: 100%;
   height: 12%;
-  background-color: var(--mainColorDarker);
   padding: 0.5rem;
   margin-bottom: 1.2rem;
+  background: var(--blackGradient);
+  box-shadow: var(--blackBoxShadow);
+  border-radius: 10px;
 }

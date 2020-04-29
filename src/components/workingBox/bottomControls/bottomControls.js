@@ -1,11 +1,7 @@
 import React from "react";
 import "./bottomControls.scss";
 const BottomControls = () => {
-  return (
-    <div className="bottomControls">
-      <h6>controls</h6>
-    </div>
-  );
+  return <div className="bottomControls"></div>;
 };
 
 export default BottomControls;
