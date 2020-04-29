@@ -21,29 +21,36 @@ html {
   --fontColor: #eaf2ff;
   --gradient: linear-gradient(to right, #fdc830, #f37335);
   --gradientDarker: linear-gradient(to right, #f12711, #f5af19);
+  color: var(--fontColor);
 }
 
 h1 {
   font-size: var(--header1);
+  font-weight: 300;
 }
 
 h2 {
   font-size: var(--header2);
+  font-weight: 300;
 }
 
 h3 {
   font-size: var(--header3);
+  font-weight: 300;
 }
 
 h4 {
   font-size: var(--header4);
+  font-weight: 300;
 }
 
 h5 {
   font-size: var(--header5);
+  font-weight: 300;
 }
 h6 {
   font-size: var(--header6);
+  font-weight: 300;
 }
 a {
   text-decoration: none;
@@ -58,4 +65,5 @@ li,
 p,
 a {
   font-size: var(--text-size);
+  font-weight: 300;
 }

@@ -3,7 +3,7 @@ import "./bottomControls.scss";
 const BottomControls = () => {
   return (
     <div className="bottomControls">
-      <h3>controls</h3>
+      <h6>controls</h6>
     </div>
   );
 };
