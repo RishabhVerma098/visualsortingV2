@@ -1,0 +1,61 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Montserrat", sans-serif;
+  --header1: 5rem;
+  --header2: 4.4rem;
+  --header3: 4rem;
+  --header4: 3.5rem;
+  --header5: 3rem;
+  --header6: 2.5rem;
+  --text-size: 2rem;
+  --mainColor: #282c34;
+  --mainColorDarker: #21252b;
+  --blueColor: #528bff;
+  --greyColor: #7d8390;
+  --fontColor: #eaf2ff;
+  --gradient: linear-gradient(to right, #fdc830, #f37335);
+  --gradientDarker: linear-gradient(to right, #f12711, #f5af19);
+}
+
+h1 {
+  font-size: var(--header1);
+}
+
+h2 {
+  font-size: var(--header2);
+}
+
+h3 {
+  font-size: var(--header3);
+}
+
+h4 {
+  font-size: var(--header4);
+}
+
+h5 {
+  font-size: var(--header5);
+}
+h6 {
+  font-size: var(--header6);
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+
+ul {
+  list-style: none;
+}
+
+li,
+p,
+a {
+  font-size: var(--text-size);
+}
