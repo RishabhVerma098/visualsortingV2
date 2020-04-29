@@ -1,0 +1,48 @@
+.customDropdown {
+  width: 12rem;
+  height: 100%;
+  .Dropdown-root {
+    height: 100%;
+    .Dropdown-control {
+      height: 100%;
+      background: var(--blackGradient);
+      border-left: 0.6rem solid var(--blueColor);
+      border-right: none;
+      border-top: none;
+      border-bottom: none;
+      box-shadow: var(--blackBoxShadow);
+      color: var(--fontColor);
+      font-size: 1.7rem;
+      border-radius: 5px;
+      display: flex;
+      .Dropdown-placeholder {
+        align-self: center;
+      }
+      .Dropdown-arrow-wrapper {
+        .Dropdown-arrow {
+          border-color: var(--fontColor) transparent transparent;
+          margin-top: 1rem;
+        }
+      }
+    }
+    .Dropdown-menu {
+      margin-top: 0.5rem;
+      background: var(--blackGradient);
+      box-shadow: var(--blackBoxShadow);
+      border: none;
+
+      .Dropdown-option {
+        color: var(--fontColor);
+        font-size: 1.5rem;
+        &:hover {
+          background-color: var(--blueColor);
+          color: var(--fontColor);
+        }
+      }
+      .Dropdown-option.is-selected {
+        background-color: var(--blueColor);
+        color: var(--fontColor);
+      }
+    }
+  }
+}
