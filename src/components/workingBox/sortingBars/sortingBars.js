@@ -3,10 +3,10 @@ import "./sortingBars.scss";
 import { random } from "lodash";
 import uuid from "react-uuid";
 import { motion } from "framer-motion";
-import { ThemeContext } from "../../context/bubbleSort";
+import { BubbleSortContext } from "../../context/bubbleSort";
 const SortingBox = () => {
   const { bars, setBars, message, bubbleSortOptimised } = useContext(
-    ThemeContext
+    BubbleSortContext
   );
   const numberOfBars = 5;
   useEffect(() => {

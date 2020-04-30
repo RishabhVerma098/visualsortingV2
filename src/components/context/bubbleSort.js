@@ -1,8 +1,8 @@
 import React, { useState, createContext } from "react";
 
-export const ThemeContext = createContext();
+export const BubbleSortContext = createContext();
 
-const ThemeContextProvider = (props) => {
+const BubbleSortContextProvider = (props) => {
   const [bars, setBars] = useState([]);
   const [message, setMessage] = useState(null);
   const timeout = (ms) => {
@@ -56,11 +56,11 @@ const ThemeContextProvider = (props) => {
   };
 
   return (
-    <ThemeContext.Provider
+    <BubbleSortContext.Provider
       value={{ bars, setBars, message, bubbleSortOptimised }}
     >
       {props.children}
-    </ThemeContext.Provider>
+    </BubbleSortContext.Provider>
   );
 };
-export default ThemeContextProvider;
+export default BubbleSortContextProvider;
