@@ -5,4 +5,8 @@
   background: var(--blackGradient);
   box-shadow: var(--blackBoxShadow);
   border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
 }
