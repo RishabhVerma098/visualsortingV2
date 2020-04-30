@@ -7,11 +7,11 @@ const CustomSlider = () => {
   const changeWidth = (add) => {
     if (add) {
       if (width < 100) {
-        setWidth((prevWidth) => prevWidth + 5);
+        setWidth((prevWidth) => prevWidth + 10);
       }
     } else {
-      if (width > 5) {
-        setWidth((prevWidth) => prevWidth - 5);
+      if (width > 10) {
+        setWidth((prevWidth) => prevWidth - 10);
       }
     }
   };
@@ -19,14 +19,14 @@ const CustomSlider = () => {
   return (
     <div className="slider">
       <div className="plus" onClick={() => changeWidth(true)}>
-        <img src={require("../../../../../assets/plus.png")}></img>
+        <img src={require("../../../../../assets/plus.png")} alt="+"></img>
       </div>
       <div className="range">
         <div className="bar" style={{ width: `${width}%` }}></div>
-        <p>{width / 5}</p>
+        <p>{width / 10}</p>
       </div>
       <div className="minus" onClick={() => changeWidth(false)}>
-        <img src={require("../../../../../assets/minus.png")}></img>
+        <img src={require("../../../../../assets/minus.png")} alt="-"></img>
       </div>
     </div>
   );
