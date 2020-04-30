@@ -13,7 +13,7 @@ const BubbleSortContextProvider = (props) => {
     let newBarList = bars;
     let len = bars.length;
     let swapped;
-    setMessage("Starting Bubble Sort");
+    setMessage({ message: "Starting Bubble Sort", code: 100 });
     do {
       swapped = false;
       for (let i = 0; i < len - 1; i++) {
@@ -23,11 +23,12 @@ const BubbleSortContextProvider = (props) => {
           newBarList[i + 1].color.background =
             "linear-gradient(to bottom, #36d1dc, #5b86e5)";
           setBars([...newBarList]);
-          setMessage(
-            `Swaping bar with value ${newBarList[i].height} and ${
+          setMessage({
+            message: `Swaping bar with value ${newBarList[i].height} and ${
               newBarList[i + 1].height
-            }`
-          );
+            }`,
+            code: 400,
+          });
           await timeout(500);
           let tmp = newBarList[i];
           newBarList[i] = newBarList[i + 1];
@@ -38,7 +39,7 @@ const BubbleSortContextProvider = (props) => {
           newBarList[i + 1].color.background =
             "linear-gradient(to top, #1d976c, #93f9b9)";
           setBars([...newBarList]);
-          setMessage(`Swaped!!`);
+          setMessage({ message: `Swaped!!`, code: 400 });
           await timeout(350);
           newBarList[i].color.background =
             "linear-gradient(to bottom, #fdc830, #f37335)";
@@ -47,12 +48,12 @@ const BubbleSortContextProvider = (props) => {
           setBars([...newBarList]);
           await timeout(500);
         } else {
-          setMessage(`Already in place`);
+          setMessage({ message: `Already in place`, code: 401 });
         }
       }
     } while (swapped);
     setBars([...newBarList]);
-    setMessage("Ending Bubble Sort");
+    setMessage({ message: "Ending Bubble Sort", code: 200 });
   };
 
   return (

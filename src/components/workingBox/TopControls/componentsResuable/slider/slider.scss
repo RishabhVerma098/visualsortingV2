@@ -38,6 +38,10 @@
     justify-content: center;
     align-items: center;
     border-radius: 5px;
+    p {
+      font-size: 5rem;
+      font-weight: 400;
+    }
     &:hover {
       cursor: pointer;
     }

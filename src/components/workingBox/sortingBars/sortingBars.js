@@ -4,11 +4,13 @@ import { random } from "lodash";
 import uuid from "react-uuid";
 import { motion } from "framer-motion";
 import { BubbleSortContext } from "../../context/bubbleSort";
+import { SliderContext } from "../../context/Slider";
 const SortingBox = () => {
   const { bars, setBars, message, bubbleSortOptimised } = useContext(
     BubbleSortContext
   );
-  const numberOfBars = 5;
+  const { width } = useContext(SliderContext);
+  const numberOfBars = width / 10;
   useEffect(() => {
     const initailBars = [];
     for (let i = 0; i < numberOfBars; i++) {
@@ -22,15 +24,18 @@ const SortingBox = () => {
       });
     }
     setBars([...initailBars]);
-  }, []);
+  }, [width]);
 
-  console.log(message);
+  //console.log("message", message);
   return (
     <div className="sortingBox" onClick={bubbleSortOptimised}>
       <ul className="hey">
         {bars.map((bar) => {
           return (
             <motion.li
+              initial={{ opacity: 0, scale: 0 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.7 }}
               key={bar.id}
               className="bar"
               style={{ height: `${bar.height}%` }}

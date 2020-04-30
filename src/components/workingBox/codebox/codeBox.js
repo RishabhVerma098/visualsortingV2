@@ -53,7 +53,7 @@ const CodeBox = () => {
           fontSize: "1.6rem",
           fontFamily: "Montserrat, sans-serif",
           display: "flex",
-          justifyContent: "center",
+          justifyContent: "start",
           alignItems: "center",
         }}
       >

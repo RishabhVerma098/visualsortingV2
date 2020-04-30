@@ -1,32 +1,39 @@
-import React, { useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import "./slider.scss";
+import { SliderContext } from "../../../../context/Slider";
+import { BubbleSortContext } from "../../../../context/bubbleSort";
+
 //TODO:UNINSTALL REACT-SLIDER
 const CustomSlider = () => {
-  const [width, setWidth] = useState(40);
-
-  const changeWidth = (add) => {
-    if (add) {
-      if (width < 100) {
-        setWidth((prevWidth) => prevWidth + 10);
-      }
+  const { width, changeWidth } = useContext(SliderContext);
+  const { message } = useContext(BubbleSortContext);
+  console.log(message);
+  const [enable, setEnable] = useState(true);
+  const enableIcons = () => {
+    if (message === null || message.code === 200) {
+      setEnable(true);
     } else {
-      if (width > 10) {
-        setWidth((prevWidth) => prevWidth - 10);
-      }
+      setEnable(false);
     }
   };
+  useEffect(() => {
+    enableIcons();
+  }, [message]);
 
   return (
     <div className="slider">
-      <div className="plus" onClick={() => changeWidth(true)}>
-        <img src={require("../../../../../assets/plus.png")} alt="+"></img>
+      <div className="plus" onClick={() => (enable ? changeWidth(true) : null)}>
+        <p style={enable ? { color: "#eaf2ff" } : { color: "#7d8390" }}>+</p>
       </div>
       <div className="range">
         <div className="bar" style={{ width: `${width}%` }}></div>
         <p>{width / 10}</p>
       </div>
-      <div className="minus" onClick={() => changeWidth(false)}>
-        <img src={require("../../../../../assets/minus.png")} alt="-"></img>
+      <div
+        className="minus"
+        onClick={() => (enable ? changeWidth(false) : null)}
+      >
+        <p style={enable ? { color: "#eaf2ff" } : { color: "#7d8390" }}>-</p>
       </div>
     </div>
   );
