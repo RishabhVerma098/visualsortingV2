@@ -10,6 +10,7 @@ const BubbleSortContextProvider = (props) => {
   const timeout = (ms) => {
     return new Promise((resolve) => setTimeout(resolve, ms));
   };
+
   let bubbleSortOptimised = async () => {
     let newBarList = bars;
     let len = bars.length;

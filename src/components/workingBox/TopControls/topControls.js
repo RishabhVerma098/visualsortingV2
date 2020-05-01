@@ -4,34 +4,31 @@ import CustomDropdown from "./componentsResuable/dropdown/dropdown";
 import CustomSlider from "./componentsResuable/slider/slider";
 import { SpeedContext } from "../../context/speedSorting";
 import { BubbleSortContext } from "../../context/bubbleSort";
+import { SortingDropDown } from "../../context/sortingDropDown";
 const TopControls = () => {
-  const optionsForSorting = ["Bubble", "Selection", "Insetion"];
-  const [currentForSorting, setCurrentForSorting] = useState(
-    optionsForSorting[0]
-  );
   const { optionsForSpeed, setCurrentForSpeed, currentForSpeed } = useContext(
     SpeedContext
   );
-  const { setSpeed } = useContext(BubbleSortContext);
-
+  const { setSpeed, message } = useContext(BubbleSortContext);
+  const {
+    optionsForSorting,
+    currentForSorting,
+    setCurrentForSorting,
+  } = useContext(SortingDropDown);
   const handleSpeed = () => {
-    console.log(currentForSpeed.value);
     switch (currentForSpeed.value) {
       case "Medium":
-        console.log("Med==500");
         setSpeed(500);
         break;
       case "Fast":
-        console.log("fast==200");
         setSpeed(200);
         break;
       case "Slow":
         setSpeed(700);
-        console.log("slow==700");
+
         break;
       default:
         setSpeed(500);
-        console.log("default");
         break;
     }
   };
@@ -41,15 +38,18 @@ const TopControls = () => {
   }, [currentForSpeed]);
   return (
     <div className="topControl">
-      {/* <CustomDropdown
+      <CustomDropdown
         options={optionsForSorting}
         setCurrent={setCurrentForSorting}
-      /> */}
+        current={currentForSorting}
+        message={message}
+      />
       <CustomSlider />
       <CustomDropdown
         options={optionsForSpeed}
         setCurrent={setCurrentForSpeed}
         current={currentForSpeed}
+        message={message}
       />
     </div>
   );
