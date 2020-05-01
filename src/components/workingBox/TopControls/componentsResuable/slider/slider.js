@@ -7,7 +7,6 @@ import { BubbleSortContext } from "../../../../context/bubbleSort";
 const CustomSlider = () => {
   const { width, changeWidth } = useContext(SliderContext);
   const { message } = useContext(BubbleSortContext);
-  console.log(message);
   const [enable, setEnable] = useState(true);
   const enableIcons = () => {
     if (message === null || message.code === 200) {

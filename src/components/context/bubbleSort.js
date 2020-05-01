@@ -1,14 +1,15 @@
-import React, { useState, createContext } from "react";
+import React, { useState, createContext, useContext } from "react";
 
 export const BubbleSortContext = createContext();
 
 const BubbleSortContextProvider = (props) => {
   const [bars, setBars] = useState([]);
   const [message, setMessage] = useState(null);
+  const [speed, setSpeed] = useState(500);
+
   const timeout = (ms) => {
     return new Promise((resolve) => setTimeout(resolve, ms));
   };
-
   let bubbleSortOptimised = async () => {
     let newBarList = bars;
     let len = bars.length;
@@ -29,7 +30,7 @@ const BubbleSortContextProvider = (props) => {
             }`,
             code: 400,
           });
-          await timeout(500);
+          await timeout(speed);
           let tmp = newBarList[i];
           newBarList[i] = newBarList[i + 1];
           newBarList[i + 1] = tmp;
@@ -40,13 +41,13 @@ const BubbleSortContextProvider = (props) => {
             "linear-gradient(to top, #1d976c, #93f9b9)";
           setBars([...newBarList]);
           setMessage({ message: `Swaped!!`, code: 400 });
-          await timeout(350);
+          await timeout(speed - 150);
           newBarList[i].color.background =
             "linear-gradient(to bottom, #fdc830, #f37335)";
           newBarList[i + 1].color.background =
             "linear-gradient(to bottom, #fdc830, #f37335)";
           setBars([...newBarList]);
-          await timeout(500);
+          await timeout(speed);
         } else {
           setMessage({ message: `Already in place`, code: 401 });
         }
@@ -58,7 +59,7 @@ const BubbleSortContextProvider = (props) => {
 
   return (
     <BubbleSortContext.Provider
-      value={{ bars, setBars, message, bubbleSortOptimised }}
+      value={{ bars, setBars, message, bubbleSortOptimised, setSpeed }}
     >
       {props.children}
     </BubbleSortContext.Provider>
