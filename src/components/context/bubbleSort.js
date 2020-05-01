@@ -1,4 +1,4 @@
-import React, { useState, createContext, useContext } from "react";
+import React, { useState, createContext } from "react";
 
 export const BubbleSortContext = createContext();
 
@@ -6,7 +6,6 @@ const BubbleSortContextProvider = (props) => {
   const [bars, setBars] = useState([]);
   const [message, setMessage] = useState(null);
   const [speed, setSpeed] = useState(500);
-
   const timeout = (ms) => {
     return new Promise((resolve) => setTimeout(resolve, ms));
   };
@@ -18,6 +17,7 @@ const BubbleSortContextProvider = (props) => {
     setMessage({ message: "Starting Bubble Sort", code: 100 });
     do {
       swapped = false;
+
       for (let i = 0; i < len - 1; i++) {
         if (newBarList[i].height > newBarList[i + 1].height) {
           newBarList[i].color.background =
@@ -60,7 +60,13 @@ const BubbleSortContextProvider = (props) => {
 
   return (
     <BubbleSortContext.Provider
-      value={{ bars, setBars, message, bubbleSortOptimised, setSpeed }}
+      value={{
+        bars,
+        setBars,
+        message,
+        bubbleSortOptimised,
+        setSpeed,
+      }}
     >
       {props.children}
     </BubbleSortContext.Provider>

@@ -25,21 +25,25 @@ const SortingBox = () => {
     }
     setBars([...initailBars]);
   }, [width]);
+  const spring = {
+    type: "spring",
+    damping: 10,
+    stiffness: 100,
+  };
 
-  //console.log("message", message);
   return (
-    <div className="sortingBox" onClick={bubbleSortOptimised}>
+    <div className="sortingBox">
       <ul className="hey">
         {bars.map((bar) => {
           return (
             <motion.li
               initial={{ opacity: 0, scale: 0 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.7 }}
+              transition={{ duration: 0.5 }}
               key={bar.id}
               className="bar"
               style={{ height: `${bar.height}%` }}
-              positionTransition
+              positionTransition={spring}
             >
               <div className="hollow">
                 <div
