@@ -66,6 +66,7 @@ const BubbleSortContextProvider = (props) => {
         message,
         bubbleSortOptimised,
         setSpeed,
+        setMessage,
       }}
     >
       {props.children}

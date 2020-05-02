@@ -9,12 +9,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
   .controls {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     width: 90%;
     height: 80%;
+
     .sort {
       width: 12%;
       height: 100%;
@@ -36,7 +38,11 @@
           color: var(--fontColor);
         }
         &:active {
+          border: none;
           transform: translateY(-5px);
+        }
+        &:focus {
+          border: none;
         }
       }
     }

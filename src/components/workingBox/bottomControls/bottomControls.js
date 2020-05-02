@@ -1,17 +1,33 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import "./bottomControls.scss";
 import { BubbleSortContext } from "../../context/bubbleSort";
-import { sortBy } from "lodash";
+import { shuffle } from "lodash";
 
 const BottomControls = () => {
-  const { message, bubbleSortOptimised } = useContext(BubbleSortContext);
+  const {
+    message,
+    bubbleSortOptimised,
+    bars,
+    setBars,
+    setMessage,
+  } = useContext(BubbleSortContext);
+
+  const shuffleList = () => {
+    let newList = shuffle(bars);
+    setBars([...newList]);
+    setMessage(null);
+  };
 
   return (
     <div className="bottomControls">
       <div className="controls">
-        {message === null || message.code === 200 ? (
+        {message === null ? (
           <div className="sort">
             <button onClick={bubbleSortOptimised}>Sort</button>
+          </div>
+        ) : message.code === 200 ? (
+          <div className="sort">
+            <button onClick={shuffleList}>Suffle</button>
           </div>
         ) : (
           <div className="message">
