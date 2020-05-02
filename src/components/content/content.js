@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./content.scss";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 function Content() {
   const [scrollPosition, setSrollPosition] = useState(0);
   const [showBoxByScroll, setShowBoxByScroll] = useState(false);
@@ -35,28 +35,36 @@ function Content() {
   return (
     <div className="content">
       <h1>Hello world</h1>
-      {showBoxByScroll ? (
-        <motion.div
-          initial={{
-            x: 300,
-          }}
-          animate={{
-            x: xPos,
-          }}
-          transition={{
-            duration: 1,
-          }}
-          className="smallBox"
-        >
-          <h3
-            onClick={() => {
-              setHide(!xPos);
+      <AnimatePresence>
+        {showBoxByScroll && (
+          <motion.div
+            initial={{
+              x: 300,
+              opacity: 0.5,
             }}
+            animate={{
+              x: xPos,
+              opacity: 1,
+            }}
+            transition={{
+              duration: 0.5,
+            }}
+            exit={{
+              opacity: 0,
+              x: 300,
+            }}
+            className="smallBox"
           >
-            hello world
-          </h3>
-        </motion.div>
-      ) : null}
+            <h3
+              onClick={() => {
+                setHide(!xPos);
+              }}
+            >
+              hello world
+            </h3>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
