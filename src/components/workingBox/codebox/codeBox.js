@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext, useRef } from "react";
 import "./codeBox.scss";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { dark } from "react-syntax-highlighter/dist/esm/styles/prism";
-
+import { BubbleSortContext } from "../../context/bubbleSort";
+import Welcome from "./welcome";
+import MessageStack from "./stack";
 const CodeBox = () => {
   const codeStringJavascript = {
     lang: "javascript",
@@ -40,10 +42,49 @@ const CodeBox = () => {
   };
 
   const [currentCode, setCurrentCode] = useState(codeStringJavascript);
+  const { message } = useContext(BubbleSortContext);
+
+  const ref = useRef(null);
+
+  const scollDown =()=>{
+    ref.current.scrollTop = ref.current.scrollHeight;
+  }
+
+  useEffect(()=>{
+    scollDown()
+  },[message])
 
   return (
-    <div className="codeBox">
-      <SyntaxHighlighter
+    <div className="codeBox" ref={ref}>
+      {message === null || message.code === 200 ? (
+        <SyntaxHighlighter
+          language={currentCode.lang}
+          style={dark}
+          customStyle={{
+            background: "transparent",
+            border: "none",
+            boxShadow: "none",
+            fontSize: "1.6rem",
+            fontFamily: "Montserrat, sans-serif",
+            display: "flex",
+            justifyContent: "start",
+            alignItems: "center",
+            justifySelf: "center",
+          }}
+        >
+          {currentCode.code}
+        </SyntaxHighlighter>
+      ) : (
+        <MessageStack message={message} />
+      )}
+    </div>
+  );
+};
+
+export default CodeBox;
+
+{
+  /* <SyntaxHighlighter
         language={currentCode.lang}
         style={dark}
         customStyle={{
@@ -55,12 +96,9 @@ const CodeBox = () => {
           display: "flex",
           justifyContent: "start",
           alignItems: "center",
+          justifySelf: "center",
         }}
       >
         {currentCode.code}
-      </SyntaxHighlighter>
-    </div>
-  );
-};
-
-export default CodeBox;
+      </SyntaxHighlighter> */
+}

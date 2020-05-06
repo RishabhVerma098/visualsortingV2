@@ -1,0 +1,21 @@
+.messageStack {
+  padding-right: 1.2rem;
+  margin-left: 2rem;
+  font-family: Bitwise;
+  .stack {
+    margin-top: 2rem;
+    .message {
+      font-size: 1.7rem;
+    }
+    .currentArray {
+      width: 100%;
+      .array {
+        margin-top: 1rem;
+        display: flex;
+        li {
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+}

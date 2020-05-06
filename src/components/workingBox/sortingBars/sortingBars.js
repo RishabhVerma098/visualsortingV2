@@ -37,8 +37,8 @@ const SortingBox = () => {
         {bars.map((bar) => {
           return (
             <motion.li
-              initial={{ opacity: 0, scale: 0 }}
-              animate={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, scaleY: 0  }}
+              animate={{ opacity: 1, scaleY: 1   }}
               transition={{ duration: 0.5 }}
               key={bar.id}
               className="bar"

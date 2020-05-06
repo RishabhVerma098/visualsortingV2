@@ -7,6 +7,41 @@
   border-radius: 10px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-self: center;
+  // justify-content: center;
+  // align-self: center;
+  overflow-y: auto;
+  padding-right: 2rem;
+  padding-top: 2rem;
+  overflow-x: hidden;
+  .terminal {
+    width: 100%;
+    padding-right: 1.2rem;
+    margin-left: 2rem;
+    font-family: Bitwise;
+    overflow: hidden;
+    p {
+      font-size: 1.7rem;
+      letter-spacing: 0.25rem;
+      animation: right_to_left 5s ease infinite alternate;
+      .welcome {
+        font-size: 1.5rem;
+      }
+    }
+    .divider {
+      font-size: 1.5rem;
+    }
+    .hello,
+    .continue {
+      margin-top: 1.5rem;
+      font-size: 1.5rem;
+    }
+  }
+}
+@keyframes right_to_left {
+  from {
+    transform: translateX(80%);
+  }
+  to {
+    transform: translateX(-300%);
+  }
 }

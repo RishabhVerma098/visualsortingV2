@@ -7,7 +7,7 @@ import SpeedContextProvider from "./components/context/speedSorting";
 import SortingDropDownProvider from "./components/context/sortingDropDown";
 import { transitions, positions, Provider as AlertProvider } from "react-alert";
 import AlertTemplate from "react-alert-template-basic";
-import Content from "./components/content/content";
+//import Content from "./components/content/content";
 
 const options = {
   // you can also just use 'bottom center'
@@ -34,7 +34,7 @@ function App() {
           </BubbleSortContextProvider>
         </AlertProvider>
       </div>
-      <Content />
+    
     </div>
   );
 }
