@@ -46,13 +46,13 @@ const CodeBox = () => {
 
   const ref = useRef(null);
 
-  const scollDown =()=>{
+  const scollDown = () => {
     ref.current.scrollTop = ref.current.scrollHeight;
-  }
+  };
 
-  useEffect(()=>{
-    scollDown()
-  },[message])
+  useEffect(() => {
+    scollDown();
+  }, [message]);
 
   return (
     <div className="codeBox" ref={ref}>
@@ -64,7 +64,7 @@ const CodeBox = () => {
             background: "transparent",
             border: "none",
             boxShadow: "none",
-            fontSize: "1.6rem",
+            fontSize: "1.5rem",
             fontFamily: "Montserrat, sans-serif",
             display: "flex",
             justifyContent: "start",

@@ -1,3 +1,27 @@
+@mixin scrollbars($size, $foreground-color, $background-color) {
+  // For Google Chrome
+  &::-webkit-scrollbar {
+    width:  $size;
+    height: $size;
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $foreground-color;
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $background-color;
+  }
+
+  // For Internet Explorer
+  & {
+    scrollbar-face-color: $foreground-color;
+    scrollbar-track-color: $background-color;
+  }
+}
+
 .codeBox {
   width: 100%;
   height: 100%;
@@ -7,9 +31,10 @@
   border-radius: 10px;
   display: flex;
   flex-direction: column;
+  @include scrollbars(10px, var(--mainColor) , var(--mainColorDarker) );
   // justify-content: center;
   // align-self: center;
-  overflow-y: auto;
+  overflow-y: visible;
   padding-right: 2rem;
   padding-top: 2rem;
   overflow-x: hidden;

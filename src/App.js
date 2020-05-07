@@ -7,6 +7,7 @@ import SpeedContextProvider from "./components/context/speedSorting";
 import SortingDropDownProvider from "./components/context/sortingDropDown";
 import { transitions, positions, Provider as AlertProvider } from "react-alert";
 import AlertTemplate from "react-alert-template-basic";
+import Storage from "./components/workingBox/codebox/storage";
 //import Content from "./components/content/content";
 
 const options = {
@@ -28,13 +29,13 @@ function App() {
               <SpeedContextProvider>
                 <SortingDropDownProvider>
                   <WorkingBox />
+                  {/* <Storage/> */}
                 </SortingDropDownProvider>
               </SpeedContextProvider>
             </SliderContextProvider>
           </BubbleSortContextProvider>
         </AlertProvider>
       </div>
-    
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./stack.scss";
+import {motion} from "framer-motion";
 function MessageStack({ message }) {
   const [list, setList] = useState([]);
 
@@ -62,22 +63,16 @@ function MessageStack({ message }) {
     }
   };
 
-  const endRef = useRef(null);
 
-  // useEffect(() => {
-  //   // endRef.current.scrollTop({
-  //   //   behavior: "smooth",
-  //   //   // block: "nearest",
-  //   //   inline: "start",
-  //   // });
-  //   endRef.current.scrollIntoView();
-  // }, [list]);
-
+ 
   return (
     <ul className="messageStack" >
       {list.map((i) => {
         return (
-          <li className="stack">
+          <motion.li 
+            initial={{opacity:0 , y:10}}
+            animate={{opacity:1 , y:0}}
+          className="stack">
             <div className="message">
               <p style={styleMessage(i.code)}>{i.message}</p>
             </div>
@@ -90,7 +85,7 @@ function MessageStack({ message }) {
                 ]
               </ul>
             </div>
-          </li>
+          </motion.li>
         );
       })}
       <div style={{ visibility: "hidden" }} >
