@@ -1,7 +1,7 @@
 @mixin scrollbars($size, $foreground-color, $background-color) {
   // For Google Chrome
   &::-webkit-scrollbar {
-    width:  $size;
+    width: $size;
     height: $size;
     border-radius: 10px;
   }
@@ -31,7 +31,7 @@
   border-radius: 10px;
   display: flex;
   flex-direction: column;
-  @include scrollbars(10px, var(--mainColor) , var(--mainColorDarker) );
+  @include scrollbars(10px, var(--mainColor), var(--mainColorDarker));
   // justify-content: center;
   // align-self: center;
   overflow-y: visible;

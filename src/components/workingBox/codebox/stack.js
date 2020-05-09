@@ -41,18 +41,21 @@ function MessageStack({ message }) {
       case 400:
         return {
           color: "coral",
+
           padding: "1rem",
           borderRadius: "5px",
         };
       case 401:
         return {
           color: "#93f9b9",
+
           padding: "1rem",
           borderRadius: "5px",
         };
       case 402:
         return {
           color: "red",
+
           padding: "1rem",
           borderRadius: "5px",
         };
@@ -87,7 +90,6 @@ function MessageStack({ message }) {
           </motion.li>
         );
       })}
-      <div style={{ visibility: "hidden" }}>dunmmy</div>
     </ul>
   );
 }
