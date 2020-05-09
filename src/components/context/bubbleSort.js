@@ -20,6 +20,7 @@ const BubbleSortContextProvider = (props) => {
       array: [...bars],
       value: [],
     });
+    await timeout(speed);
     do {
       swapped = false;
 

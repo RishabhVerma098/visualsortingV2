@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./stack.scss";
-import {motion} from "framer-motion";
+import { motion } from "framer-motion";
 function MessageStack({ message }) {
   const [list, setList] = useState([]);
 
@@ -26,71 +26,68 @@ function MessageStack({ message }) {
       case 100:
         return {
           fontSize: "2rem",
-          backgroundColor: "#528bff",
+          color: "#528bff",
           padding: "1rem",
           borderRadius: "5px",
         };
       case 200:
         return {
           fontSize: "2rem",
-          backgroundColor: "#93f9b9",
+
+          color: "#93f9b9",
           padding: "1rem",
           borderRadius: "5px",
-          color: "black",
         };
       case 400:
         return {
-          backgroundColor: "coral",
+          color: "coral",
           padding: "1rem",
           borderRadius: "5px",
         };
       case 401:
         return {
-          backgroundColor: "#93f9b9",
+          color: "#93f9b9",
           padding: "1rem",
           borderRadius: "5px",
-          color: "black",
         };
       case 402:
         return {
-          backgroundColor: "#7d8390",
+          color: "red",
           padding: "1rem",
           borderRadius: "5px",
-          color: "black",
         };
       default:
         break;
     }
   };
 
-
- 
   return (
-    <ul className="messageStack" >
+    <ul className="messageStack">
       {list.map((i) => {
         return (
-          <motion.li 
-            initial={{opacity:0 , y:10}}
-            animate={{opacity:1 , y:0}}
-          className="stack">
-            <div className="message">
-              <p style={styleMessage(i.code)}>{i.message}</p>
-            </div>
-            <div className="currentArray">
-              <ul className="array">
-                [
-                {i.array.map((x) => {
-                  return <li>| {x.height} | </li>;
-                })}
-                ]
-              </ul>
+          <motion.li
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="stack"
+          >
+            <div className="hollowStack">
+              <div className="message">
+                <p style={styleMessage(i.code)}>{i.message}</p>
+              </div>
+              <div className="currentArray">
+                <ul className="array">
+                  [
+                  {i.array.map((x) => {
+                    return <li>| {x.height} | </li>;
+                  })}
+                  ]
+                </ul>
+              </div>
             </div>
           </motion.li>
         );
       })}
-      <div style={{ visibility: "hidden" }} >
-        dunmmy
-      </div>
+      <div style={{ visibility: "hidden" }}>dunmmy</div>
     </ul>
   );
 }

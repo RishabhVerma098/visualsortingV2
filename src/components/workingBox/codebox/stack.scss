@@ -1,19 +1,26 @@
 .messageStack {
   padding-right: 1.2rem;
   margin-left: 2rem;
- 
   .stack {
     margin-top: 3rem;
-    .message {
-      font-size: 1.7rem;
-    }
-    .currentArray {
-      width: 100%;
-      .array {
-        margin-top: 1rem;
-        display: flex;
-        li {
-          font-size: 1.5rem;
+    background-color: var(--mainColorDarker);
+    box-shadow: 7px 7px 14px #191c21, -7px -7px 14px #292e35;
+    border-radius: 10px;
+    .hollowStack {
+      border-radius: 10px;
+      padding: 2rem;
+      box-shadow: inset 7px 7px 14px #191c21, inset -7px -7px 14px #292e35;
+      .message {
+        font-size: 1.7rem;
+      }
+      .currentArray {
+        width: 100%;
+        .array {
+          margin-top: 1rem;
+          display: flex;
+          li {
+            font-size: 1.5rem;
+          }
         }
       }
     }
