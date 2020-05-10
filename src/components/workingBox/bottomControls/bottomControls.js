@@ -27,7 +27,7 @@ const BottomControls = () => {
           </div>
         ) : message.code === 200 ? (
           <div className="sort">
-            <button onClick={shuffleList}>Suffle</button>
+            <button onClick={shuffleList}>shuffle</button>
           </div>
         ) : (
           <div className="message">
